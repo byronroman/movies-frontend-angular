@@ -7,7 +7,7 @@ import { MoviesModel } from '@src/app/models/movie.model';
 @Component({
   selector: 'app-album',
   templateUrl: './album.component.html',
-  styleUrl: './album.component.scss',
+  styleUrls: ['./album.component.scss'],
   standalone: true,
   imports: [NgIf, NgFor, ReactiveFormsModule],
 })
