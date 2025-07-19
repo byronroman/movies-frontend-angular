@@ -4,13 +4,17 @@ import { AlbumComponent } from './components/album/album.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from '@src/app/components/header/header.component';
+import { NewMovieButtonComponent } from '@src/app/components/new-movie-button/new-movie-button.component';
+import { FooterComponent } from '@src/app/components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
   imports: [
     RouterOutlet,
-    AlbumComponent,
     HeaderComponent,
+    NewMovieButtonComponent,
+    AlbumComponent,
+    FooterComponent,
     ReactiveFormsModule,
     HttpClientModule,
   ],
