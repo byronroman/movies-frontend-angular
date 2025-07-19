@@ -1,0 +1,88 @@
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Node
+/node_modules
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/
+.vscode/*
+!.vscode/settings.json
+.vscode/extensions.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.history/*
+
+# Angular
+/.angular/cache
+.angular/cache/
+.angular/local/
+.angular/tmp/
+.angular/tsconfig.tsbuildinfo
+
+# Miscellaneous
+.sass-cache/
+.connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+*.tsbuildinfo
+*.tgz
+*.bak
+*.tmp
+*.swp
+*.swo
+*.orig
+
+# Environment files
+.env
+.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# System files
+.DS_Store
+Thumbs.db
+
+# OS generated files
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# npm logs
+npm-debug.log*
+yarn-debug.log*
+lerna-debug.log*
+
+# Mac
+.AppleDouble
+.LSOverride
+
+# Windows
+$RECYCLE.BIN/
+
+# Linux
+.Trash-
