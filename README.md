@@ -1,111 +1,105 @@
-# ng-movies
+# 🎬 CineVerse: Angular Movie Manager
 
-Aplicación frontend desarrollada en **Angular** para la gestión y visualización de películas, conectada a un microservicio backend.
+![CineVerse Demo](/public/CineVerse.gif)
 
-## Estructura del proyecto
+Frontend desarrollado en **Angular** para la gestión y visualización de películas. Esta aplicación consume un backend REST en NestJs y permite crear, editar y eliminar películas fácilmente.
 
+<p align="center">
+  <a href="https://github.com/byronroman/movies-microservice-nestjs" target="_blank">
+    <img src="https://img.shields.io/badge/Ver%20Backend%20NestJS-000?style=for-the-badge&logo=nestjs&logoColor=red" alt="Ver Backend NestJS">
+  </a>
+</p>
+
+---
+
+## 📁 Estructura del proyecto
+
+```bash
+src/
+├── app/
+│   ├── components/
+│   │   ├── album/            # Componente principal de visualización de películas
+│   │   ├── footer/           # Componente del footer de la app
+│   │   └── header/           # Componente del header de la app
+│   ├── models/               # Definición de modelos (ej. MovieModel)
+│   ├── services/
+│   │   └── album.service/    # Servicio para conexión con la API de películas
+│   ├── app.config.ts         # Configuración principal de la aplicación
+│   ├── app.html              # Template raíz
+│   ├── app.routes.ts         # Definición de rutas
+│   └── app.ts                # Componente principal
+├── assets/                   # Archivos estáticos (logos, etc.)
+│   └── logo-cineverse.svg
+├── environments/
+│   └── environment.ts        # Variables de entorno
+├── index.html                # HTML principal
+├── main.ts                   # Entrada principal de Angular
+└── styles.scss               # Estilos globales
 ```
-ng-movies/
-├── public/             # Archivos públicos (favicon, etc.)
-├── src/
-│   ├── app/
-│   │   ├── components/
-│   │   │   └── album/              # Componente principal de películas
-│   │   ├── models/                 # Modelos de datos (Movie)
-│   │   ├── services/
-│   │   │   └── album.service/      # Servicio para consumir la API de películas
-│   │   ├── app.config.ts           # Configuración principal de la app
-│   │   ├── app.html                # Template raíz
-│   │   ├── app.routes.ts           # Rutas de la aplicación
-│   │   └── app.ts                  # Componente raíz
-│   ├── environments/               # Variables de entorno
-│   │   └── environment.ts
-│   ├── index.html                  # HTML principal
-│   ├── main.ts                     # Bootstrap de Angular
-│   └── styles.scss                 # Estilos globales
-├── .editorconfig
-├── .gitignore
-├── angular.json
-├── package.json
-├── package-lock.json
-├── README.md
-├── tsconfig.app.json
-├── tsconfig.json
-└── tsconfig.spec.json
-```
 
-## Instalación
+---
 
-1. Clona el repositorio.
+## 🚀 Instalación
+
+1. Clona el repositorio:
+
+   ```bash
+   git clone https://github.com/byronroman/movies-frontend-angular.git
+   cd ng-movies
+   ```
+
 2. Instala las dependencias:
    ```bash
    npm install
    ```
 
-## Desarrollo
+---
 
-Para iniciar el servidor de desarrollo y ver la aplicación en tu navegador:
+## 💻 Desarrollo local
+
+Levanta el servidor de desarrollo y abre el navegador:
 
 ```bash
 ng serve
 ```
 
-Luego abre [http://localhost:4200](http://localhost:4200) en tu navegador.
+Visita [http://localhost:4200](http://localhost:4200)
 
-## Variables de entorno
+---
 
-Configura la URL del backend en `src/environments/environment.ts`:
+## ⚙️ Variables de entorno
 
-```typescript
+Edita la URL base del backend en `src/environments/environment.ts`:
+
+```ts
 export const environment = {
   production: false,
   MICROSERVICE_URL: "http://localhost:3000/",
 };
 ```
 
-## Estructura principal
+---
 
-- **components/album/**: Componente para mostrar y gestionar películas.
-- **services/album.service/**: Servicio Angular para consumir la API REST del backend.
-- **models/movie.model.ts**: Modelo de datos de película.
-- **environments/**: Variables de entorno para desarrollo y producción.
+## 🧩 Principales componentes
 
-## Scripts útiles
+| Carpeta                   | Función                                                            |
+| ------------------------- | ------------------------------------------------------------------ |
+| `components/album/`       | Componente principal para visualizar, editar y eliminar películas. |
+| `components/footer/`      | Footer fijo inferior.                                              |
+| `components/header/`      | Header superior con logo.                                          |
+| `services/album.service/` | Servicio para conectar con la API REST de películas.               |
+| `models/movie.model.ts`   | Interfaz que define la estructura de una película.                 |
 
-- **Construir la app**:
-  ```bash
-  ng build
-  ```
-- **Ejecutar pruebas unitarias**:
-  ```bash
-  ng test
-  ```
-- **Ejecutar pruebas end-to-end**:
-  ```bash
-  ng e2e
-  ```
+---
 
-![alt text](./src/assets/table_sql.png)
+## 📝 Notas adicionales
 
-CREATE TABLE cinema.movies (
-id serial4 NOT NULL,
-"name" varchar(100) NOT NULL,
-description varchar(255) NULL,
-"time" varchar(20) NULL,
-image text NULL,
-status bool NULL,
-CONSTRAINT movies_pkey PRIMARY KEY (id)
-);
+- Esta aplicación fue desarrollada a partir de un tutorial base, pero incluye modificaciones personalizadas con fines educativos y de práctica.
 
-INSERT INTO cinema.movies (name, description, time, image, status)
-VALUES (
-'Spider-Man: Into the Spider-Verse',
-'Teen Miles Morales becomes Spider-Man in his universe and joins others from different dimensions to save the multiverse.',
-'1h 57m',
-'https://m.media-amazon.com/images/I/81k8XlRibzL._AC_SY679_.jpg',
-TRUE
-);
+---
 
-## Notas
+## 🧑‍💻 Autor
 
-- Este frontend está pensado para conectarse a un backend NestJS corriendo en `http://localhost:3000/`.
+Desarrollado por [Byron Román](https://github.com/byronroman) — IBM Intern & Fullstack Developer.
+
+---

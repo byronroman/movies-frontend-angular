@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { NgFor, NgIf } from '@angular/common';
 import { AlbumService } from '@src/app/services/album.service/album.service';
 import { MoviesModel } from '@src/app/models/movie.model';
 
+declare const bootstrap: any;
 @Component({
   selector: 'app-album',
   templateUrl: './album.component.html',
@@ -12,6 +13,7 @@ import { MoviesModel } from '@src/app/models/movie.model';
   imports: [NgIf, NgFor, ReactiveFormsModule],
 })
 export class AlbumComponent {
+  @ViewChild('exampleModalRef') exampleModalRef!: ElementRef;
   isUpdate: boolean = false;
   formMovie: FormGroup = new FormGroup({});
   listMovies: MoviesModel[] = [];
@@ -55,6 +57,11 @@ export class AlbumComponent {
     this.albumService.saveMovie(this.formMovie.value).subscribe((res) => {
       if (res) {
         this.list();
+        const modalElement = this.exampleModalRef.nativeElement;
+        const modalInstance =
+          bootstrap.Modal.getInstance(modalElement) ||
+          new bootstrap.Modal(modalElement);
+        modalInstance.hide();
       }
     });
   }
@@ -64,6 +71,11 @@ export class AlbumComponent {
     this.albumService.updateMovie(this.formMovie.value).subscribe((res) => {
       if (res.sucess) {
         this.list();
+        const modalElement = this.exampleModalRef.nativeElement;
+        const modalInstance =
+          bootstrap.Modal.getInstance(modalElement) ||
+          new bootstrap.Modal(modalElement);
+        modalInstance.hide();
       }
     });
   }
@@ -72,6 +84,11 @@ export class AlbumComponent {
     this.albumService.deleteMovie(id).subscribe((res) => {
       if (res) {
         this.list();
+        const modalElement = this.exampleModalRef.nativeElement;
+        const modalInstance =
+          bootstrap.Modal.getInstance(modalElement) ||
+          new bootstrap.Modal(modalElement);
+        modalInstance.hide();
       }
     });
   }
