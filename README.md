@@ -100,6 +100,6 @@ export const environment = {
 
 ## 🧑‍💻 Autor
 
-Desarrollado por [Byron Román](https://github.com/byronroman) — IBM Intern & Fullstack Developer.
+> Desarrollado por [Byron Román](https://github.com/byronroman) — IBM Intern & Fullstack Developer.
 
 ---
