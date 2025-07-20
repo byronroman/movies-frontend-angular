@@ -85,6 +85,27 @@ export const environment = {
   ng e2e
   ```
 
+![alt text](./src/assets/table_sql.png)
+
+CREATE TABLE cinema.movies (
+id serial4 NOT NULL,
+"name" varchar(100) NOT NULL,
+description varchar(255) NULL,
+"time" varchar(20) NULL,
+image text NULL,
+status bool NULL,
+CONSTRAINT movies_pkey PRIMARY KEY (id)
+);
+
+INSERT INTO cinema.movies (name, description, time, image, status)
+VALUES (
+'Spider-Man: Into the Spider-Verse',
+'Teen Miles Morales becomes Spider-Man in his universe and joins others from different dimensions to save the multiverse.',
+'1h 57m',
+'https://m.media-amazon.com/images/I/81k8XlRibzL._AC_SY679_.jpg',
+TRUE
+);
+
 ## Notas
 
 - Este frontend está pensado para conectarse a un backend NestJS corriendo en `http://localhost:3000/`.
